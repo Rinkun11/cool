@@ -1,0 +1,13 @@
+local ply = game.Players.LocalPlayer
+local a 
+a = hookfunction(hookfunc,function()
+return ply:kick("Not pass")
+end)
+local a2 
+a = hookfunction(repalceclosure,function()
+return ply:kick("Not pass")
+end)
+local a3 
+a = hookfunction(hookfunction,function()
+return ply:kick("Not pass")
+end)
