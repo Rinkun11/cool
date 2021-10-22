@@ -1,0 +1,21 @@
+
+local a =  syn.__newindex
+setreadonly(syn,false)
+syn.__newindex = function(...)
+    return a(...)
+end
+setreadonly(syn,true)
+local ac
+ac =hookfunction(syn.__newindex,function(...)
+    meow("KIAC")
+    return ac(...)
+end)
+local hookchceck  = 0
+for i,v in pairs(debug.getconstants(syn.__newindex)) do
+    if not v:find("meow") or not v:find("KIAC") then
+        while true do end
+        else
+        print("pass")
+    end
+
+end
