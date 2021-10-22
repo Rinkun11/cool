@@ -1,0 +1,16 @@
+local function CountClosures()
+    local Count = 0
+    for i,v in next, getreg() do
+        if typeof(v) == 'function' and is_synapse_function(v) and typeof(i) == 'string' and i:len() == 16 then
+            Count += 1
+      end
+    end
+    return Count > 53 and 53 < Count
+end
+
+local Check = CountClosures()
+if Check then
+game.Players.LocalPlayer:Kick('Failed check')
+wait(0.25)
+while true do end
+end
